@@ -8,10 +8,13 @@ jQuery( function() {
       };
 
       jQuery.get( Postsbydate.ajaxurl, data, function(response){
-        jQuery('#wrapper').append(response);
+        if(response != 0){
+          jQuery('#wrapper').append(response);
+        }else{
+          jQuery('#load-more').addClass("hidden");
+        }
       });
     });
-
 });
 
 

@@ -121,8 +121,9 @@ function load_more_posts() {
                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     <p><?php the_excerpt(); ?></p>
                     <p><?php the_date(); ?></p>
-                </li> <?php
+                </li><?php
         endwhile;
+        wp_die(); 
     endif;
 }
 
@@ -188,9 +189,6 @@ function showPosts(){
             ),
         );
         $num_of_all_posts = count(get_posts($args));
-
-        var_dump($num_of_all_posts);
-        var_dump($counter);
 
         if($num_of_all_posts > $counter){
             ?> <button id="load-more">Load More</button> <?php
