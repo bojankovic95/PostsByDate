@@ -100,6 +100,10 @@ function load_more_posts() {
         'post_type'         => 'post',
         'posts_per_page'    => $number,
         'paged'             => $paged,
+        'orderby'           => array(
+            'date'          =>'DESC',
+            'menu_order'    =>'ASC',
+        ),
         'tax_query'         => array( 
             array(
                 'taxonomy'  => 'category',
@@ -140,6 +144,10 @@ function showPosts(){
             'post_type'         => 'post',
             'paged'             => 1,
             'posts_per_page'    => $number,
+            'orderby'           => array(
+                'date'          =>'DESC',
+                'menu_order'    =>'ASC',
+            ),
             'tax_query'         => array( 
                 array(
                     'taxonomy'  => 'category',
